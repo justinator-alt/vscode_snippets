@@ -1,0 +1,50 @@
+{
+	"Add image to document":{
+		"scope": "latex",
+		"prefix": "includefigure",
+		"body":[
+			"\\begin{figure}[$1]",
+			"    \\centering",
+			"    \\includegraphics[width=\\linewidth]{$2}",
+			"    \\caption{$3}",
+			"\\end{figure}"
+		],
+		"description": "Include a new image to latex document"
+	},
+	"Create a new document file":{
+		"scope": "latex",
+		"prefix": "newdoc",
+		"body": [
+			"% !TeX root = $1.tex",
+			"\\input{../Latex-Header/Header}",
+			"\\input{Setup}",
+			"\\begin{document}",
+			"    \\myfrontmatter",
+			"    \\maketitle",
+			"    $2",
+			"    \\mymainmatter",
+			"    \\input{Kapitel/Einleitung}",
+			"    $3",
+			"    \\printbibliography",
+			"\\end{document}"
+		],
+		"description": "Creates the content of a new root document"
+	},
+	"Create a new acronyms table":{
+		"scope": "latex",
+		"prefix": "acrotable",
+		"body": [
+			"\\chapter*{Akronyme}",
+			"\\addcontentsline{toc}{chapter}{$1}",
+			"\\begin{acronym}[$2]",
+			"\\end{acronym}"
+		],
+		"description": "Creates a new acronyms table"
+	},
+	"Add acronym to table":{
+		"scope": "latex",
+		"prefix": "acro",
+		"body": "\\acro{$1:shortForm}{$2:longForm}",
+		"description": "Adds a new entry to the acronyms table"
+	}
+}
