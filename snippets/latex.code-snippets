@@ -4,9 +4,9 @@
 		"prefix": "includefigure",
 		"body":[
 			"\\begin{figure}[$1]",
-			"    \\centering",
-			"    \\includegraphics[width=\\linewidth]{$2}",
-			"    \\caption{$3}",
+			"\\centering",
+			"\\includegraphics[width=\\linewidth]{$2}",
+			"\\caption{$3}",
 			"\\end{figure}"
 		],
 		"description": "Include a new image to latex document"
@@ -19,13 +19,13 @@
 			"\\input{../Latex-Header/Header}",
 			"\\input{Setup}",
 			"\\begin{document}",
-			"    \\myfrontmatter",
-			"    \\maketitle",
-			"    $2",
-			"    \\mymainmatter",
-			"    \\input{Kapitel/Einleitung}",
-			"    $3",
-			"    \\printbibliography",
+			"\\myfrontmatter",
+			"\\maketitle",
+			"$2",
+			"\\mymainmatter",
+			"\\input{Kapitel/Einleitung}",
+			"$3",
+			"\\printbibliography",
 			"\\end{document}"
 		],
 		"description": "Creates the content of a new root document"
@@ -44,7 +44,23 @@
 	"Add acronym to table":{
 		"scope": "latex",
 		"prefix": "acro",
-		"body": "\\acro{$1:shortForm}{$2:longForm}",
+		"body": "\\acro{$1}{$2}",
 		"description": "Adds a new entry to the acronyms table"
+	},
+	"Add new value with SI-Unit":{
+		"scope": "latex",
+		"prefix": "siunit",
+		"body": "\\SI{$1}{$2}",
+		"description": "Adds a new value with SI-Unit to the text"
+	},
+	"Add new equation to script":{
+		"scope": "latex",
+		"prefix": "equat",
+		"body": [
+			"\\begin{equation$1}",
+			"$2",
+			"\\end{equation$1}"
+		],
+		"description": "Adds a new equation(*) environment to the script. The first parameter to specify can add a * to the equation to make it not appear in any tables"
 	}
 }
