@@ -3,10 +3,11 @@
 		"scope": "latex",
 		"prefix": "includefigure",
 		"body":[
-			"\\begin{figure}[$1]",
+			"\\begin{figure}",
 			"\\centering",
 			"\\includegraphics[width=\\linewidth]{$2}",
 			"\\caption{$3}",
+			"\\label{fig:$4}",
 			"\\end{figure}"
 		],
 		"description": "Include a new image to latex document"
@@ -50,7 +51,7 @@
 	"Add new value with SI-Unit":{
 		"scope": "latex",
 		"prefix": "siunit",
-		"body": "\\SI{$1}{$2}",
+		"body": "\\SI{$1}{\\\\$2}",
 		"description": "Adds a new value with SI-Unit to the text"
 	},
 	"Add new equation to script":{
@@ -62,5 +63,21 @@
 			"\\end{equation$1}"
 		],
 		"description": "Adds a new equation(*) environment to the script. The first parameter to specify can add a * to the equation to make it not appear in any tables"
+	},
+	"Add a new variable to be referenced with \\@":{
+		"scope": "latex",
+		"prefix": "varadd",
+		"body":[
+			"\\newcommand{\\\\$1}[1]{\\def\\@$1{#1}}",
+			"\\newcommand{\\@$1}{}",
+			"\\\\$1{$2}",
+		],
+		"description": "Adds a new variable to the setup, with the first command you declare a variable and with the second you print it to the document"
+	},
+	"Add a new instance of SIrange":{
+		"scope": "latex",
+		"prefix": "sirange",
+		"body": "\\SIrange{$1}{$2}{\\\\$3}",
+		"description": "Inserts a new instance of SIrange"
 	}
 }
