@@ -4,10 +4,10 @@
 		"prefix": "includefigure",
 		"body":[
 			"\\begin{figure}[htb]",
-			"\\centering",
-			"\\includegraphics[width=\\linewidth]{$2}",
-			"\\caption{$3}",
-			"\\label{fig:$4}",
+			"    \\centering",
+			"    \\includegraphics[width=\\linewidth]{$2}",
+			"    \\caption{$3}",
+			"    \\label{fig:$4}",
 			"\\end{figure}"
 		],
 		"description": "Include a new image to latex document"
@@ -79,5 +79,23 @@
 		"prefix": "sirange",
 		"body": "\\SIrange{$1}{$2}{\\\\$3}",
 		"description": "Inserts a new instance of SIrange"
+	},
+	"Two minipages": {
+		"prefix": "minipages",
+		"body": [
+			"\\begin{minipage}[t]{0.49\\textwidth}",
+			"    $1",
+			"\\end{minipage}",
+			"\\hfill",
+			"\\begin{minipage}[t]{0.49\\textwidth}",
+			"    $2",
+			"\\end{minipage}"
+		],
+		"description": "Two empty minipages side by side"
+	},
+	"Fraction": {
+		"prefix": "frac",
+		"body": "\\frac{$1}{$2}",
+		"description": "Fraction inserted"
 	}
 }
